@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:practo_main/common/sized_box/sized_box.dart';
 import 'package:practo_main/common/widgets/video_consultations.dart';
+import 'package:practo_main/features/consult%20doctor/consult_doctor.dart';
 import '../../../../common/widgets/cmn_container2.dart';
 import '../../../../common/widgets/common_button.dart';
 import '../../../../common/widgets/doctorslist.dart';
-import '../../../../common/widgets/promotion_banners.dart';
 import '../../../../common/widgets/symptoms.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -132,13 +132,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 5.0),
                     const SizedBox(height: 225, child: DoctorsList()),
                     const SizedBox(height: 10.0),
-                    const Row(
+                     Row(
                       children: [
-                        CircleAvatar(
-                          backgroundColor: Color(0xffF0F6F6),
-                          child: Icon(
-                            Icons.star_border,
-                            color: Color(0xff253292),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ConsultDoctor(),));
+                          },
+                          child: CircleAvatar(
+                            backgroundColor: Color(0xffF0F6F6),
+                            child: Icon(
+                              Icons.star_border,
+                              color: Color(0xff253292),
+                            ),
                           ),
                         ),
                         Text(
@@ -234,11 +239,336 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                   const SizedBox(height: 5.0),
-                    PromotionBanner(),
-                    const Divider(
-                      thickness: 5,
+                   SizedBoxes.largeSizedBox,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: AssetImage("asset/dental.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            width: screenWidth * 0.4,
+                            height: screenHeight * 0.3,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      RichText(
+                                        text: const TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: ' Practo ',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff253292),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      IconButton(
+                                        iconSize: 10.0,
+                                        padding: EdgeInsets.all(4.0),
+                                        style: ButtonStyle(
+                                          elevation: WidgetStatePropertyAll(3),
+                                          backgroundColor: WidgetStatePropertyAll(Colors.white),
+                                          minimumSize: WidgetStatePropertyAll(Size(5.0, 5.0)),
+                                          padding: WidgetStatePropertyAll(EdgeInsets.all(4.0)),
+                                        ),
+                                        onPressed: () {},
+                                        icon: Icon(Icons.arrow_forward_ios_rounded),
+                                      ),
+                                    ],
+                                  ),
+                                  const Text(
+                                    "D E N T A L",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff00B8FE),
+                                    ),
+                                  ),
+                                  const Text(
+                                    "C L I N I C S",
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                  const Text(
+                                    "Best - quality treatments\nusing advanced techniques",
+                                    style: TextStyle(fontSize: 8),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBoxes.rowNormalSizedBox,
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: AssetImage("asset/dental.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            width: screenWidth * 0.4,
+                            height: screenHeight * 0.3,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      RichText(
+                                        text: const TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: ' Practo ',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff253292),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      IconButton(
+                                        iconSize: 10.0,
+                                        padding: EdgeInsets.all(4.0),
+                                        style: ButtonStyle(
+                                          elevation: WidgetStatePropertyAll(3),
+                                          backgroundColor: WidgetStatePropertyAll(Colors.white),
+                                          minimumSize: WidgetStatePropertyAll(Size(5.0, 5.0)),
+                                          padding: WidgetStatePropertyAll(EdgeInsets.all(4.0)),
+                                        ),
+                                        onPressed: () {},
+                                        icon: Icon(Icons.arrow_forward_ios_rounded),
+                                      ),
+                                    ],
+                                  ),
+                                  const Text(
+                                    "D E N T A L",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff00B8FE),
+                                    ),
+                                  ),
+                                  const Text(
+                                    "C L I N I C S",
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                  const Text(
+                                    "Best - quality treatments\nusing advanced techniques",
+                                    style: TextStyle(fontSize: 8),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBoxes.rowNormalSizedBox,
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: AssetImage("asset/dental.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            width: screenWidth * 0.4,
+                            height: screenHeight * 0.3,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      RichText(
+                                        text: const TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: ' Practo ',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff253292),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      IconButton(
+                                        iconSize: 10.0,
+                                        padding: EdgeInsets.all(4.0),
+                                        style: ButtonStyle(
+                                          elevation: WidgetStatePropertyAll(3),
+                                          backgroundColor: WidgetStatePropertyAll(Colors.white),
+                                          minimumSize: WidgetStatePropertyAll(Size(5.0, 5.0)),
+                                          padding: WidgetStatePropertyAll(EdgeInsets.all(4.0)),
+                                        ),
+                                        onPressed: () {},
+                                        icon: Icon(Icons.arrow_forward_ios_rounded),
+                                      ),
+                                    ],
+                                  ),
+                                  const Text(
+                                    "D E N T A L",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff00B8FE),
+                                    ),
+                                  ),
+                                  const Text(
+                                    "C L I N I C S",
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                  const Text(
+                                    "Best - quality treatments\nusing advanced techniques",
+                                    style: TextStyle(fontSize: 8),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBoxes.rowNormalSizedBox,
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: AssetImage("asset/dental.jpg"),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            width: screenWidth * 0.4,
+                            height: screenHeight * 0.3,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      RichText(
+                                        text: const TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: ' Practo ',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff253292),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: '•',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Color(0xff00B8FE),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      IconButton(
+                                        iconSize: 10.0,
+                                        padding: EdgeInsets.all(4.0),
+                                        style: ButtonStyle(
+                                          elevation: WidgetStatePropertyAll(3),
+                                          backgroundColor: WidgetStatePropertyAll(Colors.white),
+                                          minimumSize: WidgetStatePropertyAll(Size(5.0, 5.0)),
+                                          padding: WidgetStatePropertyAll(EdgeInsets.all(4.0)),
+                                        ),
+                                        onPressed: () {},
+                                        icon: Icon(Icons.arrow_forward_ios_rounded),
+                                      ),
+                                    ],
+                                  ),
+                                  const Text(
+                                    "D E N T A L",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff00B8FE),
+                                    ),
+                                  ),
+                                  const Text(
+                                    "C L I N I C S",
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                  const Text(
+                                    "Best - quality treatments\nusing advanced techniques",
+                                    style: TextStyle(fontSize: 8),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+
+                        ],
+                      ),
                     ),
+                    SizedBoxes.normalSizedBox,
                    const SizedBox(height: 10.0),
                     const Row(
                       children: [
@@ -308,61 +638,125 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       SizedBoxes.largeSizedBox
-,                      Container(
-                        height: 150,
-                        width: 230,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          // color: Colors.white,
-                          image:const DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("asset/sexualhealth.png"),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const SizedBox(height: 5.0),
-                              const Text(
-                                "All things Men",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xff00B8FE),
+,                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+  child: Row(
+    children: [
+      Container(
+                              height: 150,
+                              width: 230,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                // color: Colors.white,
+                                image:const DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage("asset/sexualhealth.png"),
                                 ),
                               ),
-                              const SizedBox(height: 5.0),
-                              const Text(
-                                "Get discreet consultations\non sexual health",
-                                style: TextStyle(color: Color(0xff00B8FE)),
-                              ),
-                              const Spacer(),
-                              Container(
-                                alignment: Alignment.center,
-                                width: 108,
-                                height: 30,
-                                decoration: BoxDecoration(
-                                  color:const Color(0xff00B8FE),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: const Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Icon(Icons.video_call_outlined, color: Colors.white),
-                                    Text(
-                                      "Consult Now",
-                                      style: TextStyle(color: Colors.white),
+                                    const SizedBox(height: 5.0),
+                                    const Text(
+                                      "All things Men",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff00B8FE),
+                                      ),
                                     ),
+                                    const SizedBox(height: 5.0),
+                                    const Text(
+                                      "Get discreet consultations\non sexual health",
+                                      style: TextStyle(color: Color(0xff00B8FE)),
+                                    ),
+                                    const Spacer(),
+                                    Container(
+                                      alignment: Alignment.center,
+                                      width: 108,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color:const Color(0xff00B8FE),
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: const Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Icon(Icons.video_call_outlined, color: Colors.white),
+                                          Text(
+                                            "Consult Now",
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(height: 5.0),
                                   ],
                                 ),
                               ),
-                              const SizedBox(height: 5.0),
-                            ],
-                          ),
-                        ),
-                      )
+                            ),
+      SizedBoxes.rowSizedBox,
+      Container(
+        height: 150,
+        width: 230,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          // color: Colors.white,
+          image:const DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage("asset/sexualhealth.png"),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 5.0),
+              const Text(
+                "All things Men",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff00B8FE),
+                ),
+              ),
+              const SizedBox(height: 5.0),
+              const Text(
+                "Get discreet consultations\non sexual health",
+                style: TextStyle(color: Color(0xff00B8FE)),
+              ),
+              const Spacer(),
+              Container(
+                alignment: Alignment.center,
+                width: 108,
+                height: 30,
+                decoration: BoxDecoration(
+                  color:const Color(0xff00B8FE),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.video_call_outlined, color: Colors.white),
+                    Text(
+                      "Consult Now",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 5.0),
+            ],
+          ),
+        ),
+      ),
+    ],
+  ),
+
+)
 
                     ],
                   ),
@@ -474,63 +868,63 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBoxes.normalSizedBox,
-              const Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Color(0xffF0F6F6),
-                    child: Icon(
-                      Icons.videocam_outlined,
-                      color: Color(0xff253292),
-                    ),
-                  ),
-                  SizedBox(width: 8.0),
-                  Text(
-                    "Instant video consultations with\nspecialists",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              SizedBoxes.normalSizedBox,
-               Padding(
-                 padding: const EdgeInsets.all(10.0),
-                 child: SizedBox(height: 550, child: VideoConsultations()),
-               ),
-              SizedBoxes.largeSizedBox,
-              CommonButton(
-                buttonText: "View All Symptoms",
-                onPressed: () {},
-              ),
-              SizedBoxes.normalSizedBox,
-              Divider(thickness: 5,),
-              SizedBoxes.normalSizedBox,
-              const Row(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Color(0xffF0F6F6),
-                    child: Icon(
-                      Icons.calendar_month,
-                      color: Color(0xff253292),
-                    ),
-                  ),
-                  SizedBox(width: 8.0),
-                  Text(
-                    "Book appointments with top\nspecialist in your city",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-
-                  SizedBoxes.normalSizedBox,
-                ],
-              ),
-              SizedBoxes.normalSizedBox,
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: SizedBox(height: 450, child: VideoConsultations()),
-              ),
-              SizedBoxes.largeSizedBox,
-              CommonButton(
-                buttonText: "View All Symptoms",
-                onPressed: () {},
-              ),
+              // const Row(
+              //   children: [
+              //     CircleAvatar(
+              //       backgroundColor: Color(0xffF0F6F6),
+              //       child: Icon(
+              //         Icons.videocam_outlined,
+              //         color: Color(0xff253292),
+              //       ),
+              //     ),
+              //     SizedBox(width: 8.0),
+              //     Text(
+              //       "Instant video consultations with\nspecialists",
+              //       style: TextStyle(fontWeight: FontWeight.bold),
+              //     ),
+              //   ],
+              // ),
+              // SizedBoxes.normalSizedBox,
+              //  Padding(
+              //    padding: const EdgeInsets.all(10.0),
+              //    child: SizedBox(height: 550, child: VideoConsultations()),
+              //  ),
+              // SizedBoxes.largeSizedBox,
+              // CommonButton(
+              //   buttonText: "View All Symptoms",
+              //   onPressed: () {},
+              // ),
+              // SizedBoxes.normalSizedBox,
+              // Divider(thickness: 5,),
+              // SizedBoxes.normalSizedBox,
+              // const Row(
+              //   children: [
+              //     CircleAvatar(
+              //       backgroundColor: Color(0xffF0F6F6),
+              //       child: Icon(
+              //         Icons.calendar_month,
+              //         color: Color(0xff253292),
+              //       ),
+              //     ),
+              //     SizedBox(width: 8.0),
+              //     Text(
+              //       "Book appointments with top\nspecialist in your city",
+              //       style: TextStyle(fontWeight: FontWeight.bold),
+              //     ),
+              //
+              //     SizedBoxes.normalSizedBox,
+              //   ],
+              // ),
+              // SizedBoxes.normalSizedBox,
+              // Padding(
+              //   padding: const EdgeInsets.all(10.0),
+              //   child: SizedBox(height: 450, child: VideoConsultations()),
+              // ),
+              // SizedBoxes.largeSizedBox,
+              // CommonButton(
+              //   buttonText: "View All Symptoms",
+              //   onPressed: () {},
+              // ),
               SizedBoxes.normalSizedBox,
               Divider(thickness: 5,),
               SizedBoxes.normalSizedBox,
@@ -554,7 +948,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Container(width: double.infinity,
               height: screenHeight *0.5,
-                color: Color(0xff253292),
+                color:const  Color(0xff253292),
                 child:   Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(

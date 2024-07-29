@@ -14,6 +14,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   carousel_slider: ^4.2.1
   hexcolor: ^3.0.1
+  iconly: ^1.0.1
+  dot_navigation_bar: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -24,25 +26,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - asset/50+.png
-    - asset/Anxiety.jpg
-    - asset/Bone.jpg
-    - asset/dental.jpg
-    - asset/Diabetes.jpg
-    - asset/doc.png
-    - asset/doc1.png
-    - asset/doc2.png
-    - asset/doctor1.jpg
-    - asset/doctor2.jpg
-    - asset/hair.jpg
-    - asset/knee.jpg
-    - asset/piles.jpg
-    - asset/Pimple.jpg
-    - asset/pregnancy.jpg
-    - asset/promotion_banner2.png
-    - asset/sexual.png
-    - asset/Stomach.jpg
-    - asset/Vector.png
-    - asset/sexualhealth.png
-    - asset/general.jpg
-    - asset/skin.jpg
+    - asset/

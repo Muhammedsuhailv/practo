@@ -44,7 +44,7 @@ class DoctorsList extends StatelessWidget {
             child: Stack(
               children: [
                 Card(
-                  elevation: 5,
+                  elevation: 3,
                   child: Container(
                     height: 290,
                     width: 165,
